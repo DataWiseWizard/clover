@@ -126,12 +126,7 @@ module.exports = () => {
     mongoose.set('strictQuery', false);
 
     mongoose
-      .connect(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        ssl: false,
-        family: 4,
-      })
+      .connect(uri)
       .then(() => {
         clearTimeout(connecting);
         const { username, email, password, firstName, lastName } = store.config.rootUser;
